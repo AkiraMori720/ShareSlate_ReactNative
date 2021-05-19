@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "94003805809",
+    "project_id": "shareslate-c875f",
+    "storage_bucket": "shareslate-c875f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94003805809:android:6dcbf33a96196a3ab1a5d0",
+        "android_client_info": {
+          "package_name": "com.shareslate.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94003805809-lb4bu455fpolai31q39mur2e6r29ma2l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shareslate.chat",
+            "certificate_hash": "89a2acc6ca064843f2ad7cf2300e497d33115cf3"
+          }
+        },
+        {
+          "client_id": "94003805809-j57r84hocdt6prqslc22cujr51gqofpl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTGZI723za-ojByDo-0jyRvIDEhL2fpVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94003805809-j57r84hocdt6prqslc22cujr51gqofpl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

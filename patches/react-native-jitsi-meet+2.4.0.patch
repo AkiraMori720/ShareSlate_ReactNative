@@ -1,0 +1,112 @@
+diff --git a/node_modules/react-native-jitsi-meet/android/src/main/java/com/reactnativejitsimeet/RNJitsiMeetModule.java b/node_modules/react-native-jitsi-meet/android/src/main/java/com/reactnativejitsimeet/RNJitsiMeetModule.java
+index e10602d..cf60114 100644
+--- a/node_modules/react-native-jitsi-meet/android/src/main/java/com/reactnativejitsimeet/RNJitsiMeetModule.java
++++ b/node_modules/react-native-jitsi-meet/android/src/main/java/com/reactnativejitsimeet/RNJitsiMeetModule.java
+@@ -58,7 +58,25 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
+                             .setAudioOnly(false)
+                             .setUserInfo(_userInfo)
+                             .setFeatureFlag("pip.enabled", false)
++                            .setFeatureFlag("chat.enabled", false)
+                             .setFeatureFlag("calendar.enabled", false)
++                            .setFeatureFlag("call-integration.enabled",false)
++                            .setFeatureFlag("close-captions.enabled",false)
++                            .setFeatureFlag("invite.enabled",false)
++                            .setFeatureFlag("live-streaming.enabled",false)
++                            .setFeatureFlag("meeting-name.enabled",false)
++                            .setFeatureFlag("meeting-password.enabled",false)
++                            .setFeatureFlag("raise-hand.enabled",false)
++                            .setFeatureFlag("video-share.enabled",false)
++                            .setFeatureFlag("recording.enabled", false)
++                            .setFeatureFlag("help.enabled", false)
++                            .setFeatureFlag("lobby-mode.enabled", false)
++                            .setFeatureFlag("kick-out.enabled", false)
++                            .setFeatureFlag("filmstrip.enabled", false)
++                            .setFeatureFlag("tile-view.enabled", false)
++                            .setFeatureFlag("overflow-menu.enabled", false)
++                            .setFeatureFlag("toolbox.alwaysVisible", true)
++                            .setFeatureFlag("toolbox.enabled", false)
+                             .build();
+                     mJitsiMeetViewReference.getJitsiMeetView().join(options);
+                 }
+@@ -93,7 +111,25 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
+                             .setAudioOnly(true)
+                             .setUserInfo(_userInfo)
+                             .setFeatureFlag("pip.enabled", false)
++                            .setFeatureFlag("chat.enabled", false)
+                             .setFeatureFlag("calendar.enabled", false)
++                            .setFeatureFlag("call-integration.enabled",false)
++                            .setFeatureFlag("close-captions.enabled",false)
++                            .setFeatureFlag("invite.enabled",false)
++                            .setFeatureFlag("live-streaming.enabled",false)
++                            .setFeatureFlag("meeting-name.enabled",false)
++                            .setFeatureFlag("meeting-password.enabled",false)
++                            .setFeatureFlag("raise-hand.enabled",false)
++                            .setFeatureFlag("video-share.enabled",false)
++                            .setFeatureFlag("recording.enabled", false)
++                            .setFeatureFlag("help.enabled", false)
++                            .setFeatureFlag("lobby-mode.enabled", false)
++                            .setFeatureFlag("kick-out.enabled", false)
++                            .setFeatureFlag("filmstrip.enabled", false)
++                            .setFeatureFlag("tile-view.enabled", false)
++                            .setFeatureFlag("overflow-menu.enabled", false)
++                            .setFeatureFlag("toolbox.alwaysVisible", true)
++                            .setFeatureFlag("toolbox.enabled", false)
+                             .build();
+                     mJitsiMeetViewReference.getJitsiMeetView().join(options);
+                 }
+diff --git a/node_modules/react-native-jitsi-meet/ios/RNJitsiMeetViewManager.m b/node_modules/react-native-jitsi-meet/ios/RNJitsiMeetViewManager.m
+index c019d0a..0552a03 100644
+--- a/node_modules/react-native-jitsi-meet/ios/RNJitsiMeetViewManager.m
++++ b/node_modules/react-native-jitsi-meet/ios/RNJitsiMeetViewManager.m
+@@ -46,7 +46,25 @@ RCT_EXPORT_METHOD(call:(NSString *)urlString userInfo:(NSDictionary *)userInfo)
+             builder.userInfo = _userInfo;
+ 
+             [builder setFeatureFlag:@"pip.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"chat.enabled" withBoolean:NO];
+             [builder setFeatureFlag:@"calendar.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"call-integration.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"close-captions.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"invite.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"live-streaming.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"meeting-name.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"meeting-password.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"raise-hand.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"video-share.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"recording.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"help.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"lobby-mode.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"kick-out.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"filmstrip.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"tile-view.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"overflow-menu.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"toolbox.alwaysVisible" withBoolean:NO];
++            [builder setFeatureFlag:@"toolbox.enabled" withBoolean:NO];
+         }];
+         [jitsiMeetView join:options];
+     });
+@@ -75,7 +93,25 @@ RCT_EXPORT_METHOD(audioCall:(NSString *)urlString userInfo:(NSDictionary *)userI
+             builder.audioOnly = YES;
+ 
+             [builder setFeatureFlag:@"pip.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"chat.enabled" withBoolean:NO];
+             [builder setFeatureFlag:@"calendar.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"call-integration.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"close-captions.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"invite.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"live-streaming.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"meeting-name.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"meeting-password.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"raise-hand.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"video-share.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"recording.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"help.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"lobby-mode.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"kick-out.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"filmstrip.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"tile-view.enabled"  withBoolean:NO];
++            [builder setFeatureFlag:@"overflow-menu.enabled" withBoolean:NO];
++            [builder setFeatureFlag:@"toolbox.alwaysVisible" withBoolean:NO];
++            [builder setFeatureFlag:@"toolbox.enabled" withBoolean:NO];
+         }];
+         [jitsiMeetView join:options];
+     });
